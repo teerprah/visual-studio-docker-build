@@ -11,13 +11,16 @@ RUN & 'C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Cur
 RUN iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 
 #Dotnet4.6.1
-RUN choco install dotnet4.6.1
+RUN choco install -y dotnet4.6.1
 
 #Dotnet4.6.1 developer pack
-RUN choco install netfx-4.6.1-devpack
+RUN choco install -y netfx-4.6.1-devpack
 
 # 7zip
 RUN choco install -y 7zip.install
+
+# NUnit
+RUN choco install -y nunit-console-runner
 
 # git
 RUN choco install -y git
