@@ -42,6 +42,8 @@ RUN iex ((new-object net.webclient).DownloadString('https://chocolatey.org/insta
 # # msbuild
 # RUN & 'ProgramFiles(x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/MSBuild.exe' /version
 
+# wix toolset
+RUN choco install -y wixtoolset
 
 # 7zip
 RUN choco install -y 7zip.install
