@@ -42,6 +42,12 @@ RUN iex ((new-object net.webclient).DownloadString('https://chocolatey.org/insta
 # # msbuild
 # RUN & 'ProgramFiles(x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/MSBuild.exe' /version
 
+#Start Windows Update Feature service
+RUN Set-Service -Name wuauserv -StartupType Manual
+
+# Install .NET 3.5
+RUN Install-WindowsFeature Net-Framework-Core
+
 # wix toolset
 RUN choco install -y wixtoolset
 
