@@ -49,6 +49,9 @@ RUN Set-Service -Name wuauserv -StartupType Manual
 RUN Install-WindowsFeature Net-Framework-Core
 RUN choco install -y dotnet3.5
 
+#Install .NET SDK
+RUN choco install -y dotnet-sdk
+
 # wix toolset
 RUN choco install -y wixtoolset
 
